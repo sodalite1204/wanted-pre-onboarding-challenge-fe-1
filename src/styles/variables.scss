@@ -13,7 +13,7 @@ $grayDeep: #656d78;
   align-items: center;
 }
 
-@mixin flexSet($justify: center, $align: center, $direction: row) {
+@mixin flexSet($justify: center, $direction: row, $align: center) {
   display: flex;
   justify-content: $justify;
   align-items: $align;

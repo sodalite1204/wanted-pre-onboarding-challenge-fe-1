@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login/Login';
 import TodoList from './pages/TodoList/TodoList';
 
-function App() {
+function Router() {
   return (
     <div className="App">
       <BrowserRouter>
@@ -16,4 +16,4 @@ function App() {
   );
 }
 
-export default App;
+export default Router;

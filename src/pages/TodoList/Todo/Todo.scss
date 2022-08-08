@@ -1,0 +1,39 @@
+@import '../../../styles/variables.scss';
+
+.todo {
+  width: 300px;
+  border: 1px solid $orangeDeep;
+  margin: 10px;
+
+  .titleWrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    background-color: $orangeDeep;
+
+    .todoTitle {
+      flex: 8;
+      color: white;
+    }
+
+    button {
+      flex: 1.5;
+      padding: 3px;
+      border: 1px solid whitesmoke;
+      margin-left: 10px;
+      background-color: $orangeDeep;
+      color: white;
+      font-size: 12px;
+      cursor: pointer;
+    }
+  }
+
+  .todoContent {
+    width: 100%;
+    padding: 6px;
+    height: 100px;
+    color: $orangeDeep;
+    font-size: 14px;
+  }
+}

@@ -1,0 +1,19 @@
+$green: #5fa800;
+$border-gray: #d4d8db;
+$bg-gray: #fafafa;
+$bg-white: #fdfdfd;
+$color-black: #212529;
+$color-gray: #91979e;
+
+@mixin flexCenter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexSet($justify: center, $align: center, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}

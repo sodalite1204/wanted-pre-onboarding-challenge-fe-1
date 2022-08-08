@@ -20,8 +20,15 @@
 
       .subTitle {
         margin: 10px;
+        color: $grayMidium;
+        cursor: pointer;
+      }
+
+      .selected {
+        color: $blueGreen;
       }
     }
+
     .formWrapper {
       @include flexSet(center, column);
       width: 250px;
@@ -32,17 +39,20 @@
         margin: 0 0 20px;
         border: 1px solid $grayMidium;
       }
+
       .authButton {
         width: 100%;
         padding: 10px;
         margin: 0 0 10px;
         border: none;
-        background-color: $blueSky;
+        color: black;
+        background-color: $blueGreen;
         font-size: 18px;
+        opacity: 0.5;
+      }
 
-        .active {
-          background-color: $blueGreen;
-        }
+      .active {
+        opacity: 1;
       }
     }
   }

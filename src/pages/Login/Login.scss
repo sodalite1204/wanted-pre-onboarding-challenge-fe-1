@@ -1,0 +1,49 @@
+@import '../../styles/variables.scss';
+
+.login {
+  @include flexSet();
+  width: 100vw;
+  height: 100vh;
+
+  .loginContainer {
+    padding: 30px;
+    border: 1px solid $grayMidium;
+    text-align: center;
+
+    .title {
+      color: $blueGreen;
+      font-size: 56px;
+    }
+
+    .subTitleBox {
+      @include flexSet();
+
+      .subTitle {
+        margin: 10px;
+      }
+    }
+    .formWrapper {
+      @include flexSet(center, column);
+      width: 250px;
+
+      .authInput {
+        width: 100%;
+        padding: 10px;
+        margin: 0 0 20px;
+        border: 1px solid $grayMidium;
+      }
+      .authButton {
+        width: 100%;
+        padding: 10px;
+        margin: 0 0 10px;
+        border: none;
+        background-color: $blueSky;
+        font-size: 18px;
+
+        .active {
+          background-color: $blueGreen;
+        }
+      }
+    }
+  }
+}

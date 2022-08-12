@@ -17,13 +17,16 @@ const Login = () => {
   const { id, password } = inputValue;
 
   const isIdValid = id.includes('@') & id.includes('.');
-  const isPasswordValid = password.length > 8;
+  const isPasswordValid = password.length >= 8;
   const isInputValid = isIdValid && isPasswordValid;
 
   const goToMain = event => {
     event.preventDefault();
-    fetch('/users/login', {
+    fetch('http://localhost:8080/users/login', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         email: id,
         password: password,
@@ -36,31 +39,34 @@ const Login = () => {
           alert(data.message);
           navigate('/todos');
         } else {
-          alert('로그인 실패');
+          alert(data.details);
         }
       });
   };
 
   const goToSignUp = event => {
     event.preventDefault();
-    fetch('/users/create', {
+    fetch('http://localhost:8080/users/create', {
       method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({
         email: id,
         password: password,
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.token) {
-            localStorage.setItem('TOKEN', data.token);
-            alert(data.message);
-            navigate('/todos');
-          } else {
-            alert('회원가입 실패');
-            navigate('/auth');
-          }
-        }),
-    });
+      }),
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.token) {
+          localStorage.setItem('TOKEN', data.token);
+          alert(data.message);
+          navigate('/todos');
+        } else {
+          alert(data.details);
+          setAuthType('로그인');
+        }
+      });
   };
 
   const selectAuthType = {
@@ -91,11 +97,13 @@ const Login = () => {
             className="authInput"
             placeholder="id를 입력해주세요"
             name="id"
+            type="text"
           />
           <input
             className="authInput"
             placeholder="비밀번호를 입력해주세요"
             name="password"
+            type="password"
           />
           <button
             className={`authButton ${isInputValid ? 'active' : ''}`}

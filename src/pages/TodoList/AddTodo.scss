@@ -1,0 +1,12 @@
+@import '../../styles/variables.scss';
+
+.addTodo {
+  .titleWrapper {
+    .todoForm {
+      width: 200px;
+      @include flexSet(flex-start, column);
+      .addTodoTitle {
+      }
+    }
+  }
+}

@@ -17,7 +17,7 @@ const Login = () => {
   const { id, password } = inputValue;
 
   const isIdValid = id.includes('@') & id.includes('.');
-  const isPasswordValid = password.length > 8;
+  const isPasswordValid = password.length >= 8;
   const isInputValid = isIdValid && isPasswordValid;
 
   const goToMain = event => {
